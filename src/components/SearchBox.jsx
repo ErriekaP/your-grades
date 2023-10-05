@@ -8,6 +8,8 @@ function SearchBox({value, onChange}){
               placeholder="Search by..." 
               type="text" 
               name="search"
+              value={value} 
+              onChange={onChange} 
               />
 
             </div>

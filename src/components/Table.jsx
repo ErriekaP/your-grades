@@ -44,10 +44,10 @@ const Table = (props) => {
                 .map((item, index) => (
                       <tr key={item.id}>
                           {/* <th scope='row'>{index+1}</th> */}
-                          <td className='border-2	border-solid border-white bg-[#2A2B2E] border-spacing-1 p-2 w-20' >{item.courseNo}</td>
-                          <td className='border-2	border-solid border-white bg-[#2A2B2E] border-spacing-1 p-2 w-20'>{item.courseName}</td>
-                          <td className='border-2	border-solid border-white bg-[#2A2B2E] border-spacing-1 p-2 w-20'>{item.courseUnits}</td>
-                          <td className='border-2	border-solid border-white bg-[#2A2B2E] border-spacing-1 p-2 w-20'>{item.courseGrade}</td>
+                          <td className='border border-gray-400 px-4 py-2 text-gray-800' >{item.courseNo}</td>
+                          <td className='border border-gray-400 px-4 py-2 text-gray-800'>{item.courseName}</td>
+                          <td className='border border-gray-400 px-4 py-2 text-gray-800'>{item.courseUnits}</td>
+                          <td className='border border-gray-400 px-4 py-2 text-gray-800'>{item.courseGrade}</td>
                       </tr>
                     
                       
@@ -55,8 +55,8 @@ const Table = (props) => {
             <tr>
               <td></td>
               <td></td>
-              <td className='border-2	border-solid border-white text-[#2A2B2E] bg-white font-bold border-spacing-1 p-2 w-20'>Total QPI</td>
-              <td className='border-2	brder-solid border-white text-[#2A2B2E] bg-white font-bold border-spacing-1 p-2 w-20'>{totalQPI}</td>
+              <td className='border border-gray-400 px-4 py-2 text-gray-800'>Total QPI</td>
+              <td className='border border-gray-400 px-4 py-2 text-gray-800'>{totalQPI}</td>
            </tr>
   
       </>

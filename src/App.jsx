@@ -1,9 +1,7 @@
 import React from "react";
 import SearchBox from "./components/SearchBox";
-import NavBar from "./components/navbar";
 import Forms from "./components/Forms";
 import Table from "./components/Table";
-import TableHeader from "./components/TableHeader";
 import { useState } from 'react';
 
 function App() {
@@ -27,20 +25,29 @@ function App() {
     setData([...data, {id: data.length + 1, courseNo: form.courseNo, courseName: form.courseName, courseUnits: form.courseUnits, courseGrade: form.courseGrade}])
 
   };
-
   return (
   
   <div className="App">
-    <NavBar></NavBar>
+     <nav className='bg-gray-800'>
+        <div className='mx-auto'>
+            <SearchBox value={txtValue} onChange={(e)=> {setTxtValue(e.target.value)}} ></SearchBox>
+         </div>
+     </nav>
+
     <div className="container mx-auto p-[1rem]">
-    <div className="grid grid-rows-2 grid-flow-col gap-4">
-    <div className="row-span-1">
-      <Forms orm={form} onChange={handleForm} handleSubmit={handleSubmit}></Forms>
+    <div className="grid grid-rows-2 grid-flow-col gap-2">
+    <div className="row-span-1 w-full">
+      <Forms form={form} onChange={handleForm} handleSubmit={handleSubmit}></Forms>
     </div>
-    <div class="row-span-2">
-      <table class="table-auto">
+    <div className="row-span-2">
+      <table className="w-full border-collapse border-2 border-gray-500">
         <thead>
-          <TableHeader></TableHeader> 
+        <tr className='max-w-full px-4 py-2' >
+          <th className='border border-gray-400 px-4 py-2 text-gray-800'>Course No.</th>
+          <th className='border border-gray-400 px-4 py-2 text-gray-800'>Course Name</th>
+          <th className='border border-gray-400 px-4 py-2 text-gray-800'>Units</th>
+          <th className='border border-gray-400 px-4 py-2 text-gray-800'>Grade</th>
+        </tr> 
       </thead>
   <tbody>
     <Table items={data} query={txtValue}></Table>
